@@ -216,41 +216,36 @@ API Analysis, Update Developer Diary, code review, algorithm discussion, Testing
 - Presentation preparation.
 
 
----
+## Week 4 — 29 October 2026
 
-## Week 4 — Competition Constraints and Project Plan Review (26–30 October 2026)
+### Task: Research decision and preparation for the October 30 meeting
 
-**Status on 28 October:** Draft change record; confirm which activities were actually performed before marking them complete. The October 30 presentation and supervisor feedback have **not yet occurred** at the time of this entry.
+**Evidence reviewed:** repository source, API header, initial literature survey, research plan, revised requirements/architecture, schedule and supplied Gantt workbook.
 
-### Updated competition understanding
+**Progress recorded:**
+- The documents propose FBE + BFS + FSM with a safe local fallback for the unknown-map competition. Mapping remains gated on reliable movement inference.
+- Literature summaries distinguish initial findings from untested hypotheses. Research-question references now follow the current RQ1–RQ5 definitions.
+- Requirements, work packages and open questions cover localization, flag interactions, opponents, measurement feasibility and the provisional final deadline.
+- Meeting preparation adds a five-minute presentation and timed speaker notes. Delivery and rehearsal are not recorded as completed.
+- The Gantt responsibility-summary formulas are corrected. WP-01, WP-02, WP-06, WP-07 and WP-11 are In progress based on available evidence. Other packages remain Planned.
+- The research overview and evaluation-metrics index are populated, and the README links to the meeting materials and workbook.
 
-The team reported that the final match uses a previously unknown map prepared independently and an opposing team's agent. The team therefore proposes shifting the future work plan from standalone BFS/A* development toward safe online exploration, verified map-memory assumptions, BFS routing for known objectives, and opponent-aware decisions where game rules allow.
+### Individual contributions and traceability
 
-### Proposed responsibilities / next activities
+| Person | Contribution supported by the existing diary | Week 4 responsibility / review still to perform |
+|---|---|---|
+| Aiswarya Payakkal Vinayan | DLL/graphical-host testing; software planning, schedule and work packages | Review software status and schedule; present implementation progress and supervisor questions |
+| Nirmal Mohan | Initial safe-agent development, research planning, literature review, algorithm comparison and issue organization | Review literature interpretation and protocol; present findings and evaluation plan |
+| Both | API discussion, documentation, GitHub coordination and presentation preparation | Approve the preliminary strategy, rehearse and record supervisor feedback |
 
-- **Nirmal — Research:** Record literature findings (Yamauchi, Korf and Sturtevant priority), distinguish published insights from competition hypotheses, prepare unseen-map evaluation metrics and initial test plan.
-- **Aiswarya — Software Engineering:** Review revised requirements and 300-hour schedule, validate movement-state assumptions and flag/opponent mechanics, assess the hybrid exploration architecture.
-- **Both:** Approve or refine the preliminary strategy, review GitHub Issues and rehearse the October 30 five-minute progress presentation.
+The archived Git history includes October 29 document changes under account `nim25p36`. Account history alone does not establish who performed each research activity. This entry records documented contributions and assigned responsibilities without inventing hours or individual Week 4 tests. The meeting pack and consistency corrections were prepared with AI assistance from the uploaded materials; team review of those updates is pending.
 
-### Changes proposed for review
+### Software evidence and limitations
 
-Revised project description, requirements, plan, schedule/Gantt, research plan, algorithm comparison and software architecture. Added a competition research decision and measurable evaluation protocol. The original 14 work-package IDs, estimated 300 person-hours, team ownership and proposed date ranges are retained.
+The current safe source filters known floor/occupancy among four cardinal neighbors, disfavors immediate reverse requests, and waits when blocked. A Linux C++17 syntax check passed during the document review. This does not establish Windows DLL linkage or host behavior. The diary's earlier host demonstration concerns the initial safe version. The current improved version still needs a recorded Windows graphical-host test. FBE, BFS, FSM, persistent spatial memory, flag handling and quantitative comparison remain unimplemented or unverified.
 
-### Open questions
+### Decision and next steps
 
-Movement success detection; diagonal legality; flag handling and match winner feedback; opponent interaction rules; permitted maps/seeds for controlled comparisons; feasibility of reliable global map memory.
+Use the hybrid as the preliminary investigation direction, with A* optional. Verify movement outcomes and host rules, implement safe local exploration, then attempt confidence-aware mapping/frontiers and BFS/FSM integration. Research will compare working variants on matched development and held-out maps. Direct FSM and opponent-policy reading, measurement feasibility and trial counts remain open.
 
-### To update after October 30 meeting
-
-- **Actual tasks completed and person-hours:** [Fill from work performed]
-- **Review decisions by both teammates:** [Fill after review]
-- **Supervisor questions/feedback:** [Fill after meeting]
-- **Git commit hashes and test evidence:** [Fill after committing and running tests]
-
-### Week 4 — Refinement of proposed algorithm structure (28 October 2026)
-
-**Design draft, awaiting teammate agreement:** The proposed competition approach is now described explicitly as **Frontier-Based Exploration (FBE) + BFS + Finite-State Machine (FSM)** with a **safe local fallback**; A* is optional. FBE chooses unknown regions, BFS follows routes through known cells, and the FSM organizes explore/flag/return/opponent/recovery behavior. This is a documentation and preliminary research decision, **not an implementation or experimental result**.
-
-**Next ownership checks:** Aiswarya reviews movement/pose handling, FBE/BFS/FSM feasibility and the updated Gantt; Nirmal reviews the literature basis, research questions, test protocol, ablations and held-out evaluation maps.
-
-**Actual implementation, tests, review comments and October 30 feedback:** [Record only after completed.]
+See [Week 4 decision and status](../docs/week4-status.md), [presentation notes](../docs/presentation/week4-speaker-notes.md), and [updated Gantt](../docs/planning/Gantt_Chart_Week4.xlsx). Commit history records the preparation changes. A local commit or archived remote-tracking reference is not proof of a successful push.
